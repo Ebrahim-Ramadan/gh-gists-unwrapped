@@ -11,3 +11,30 @@
 	  0px 24px 24px -12px var(--shadow-color);
   }
   
+
+.expanding-circle {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	background-color: rgb(0, 0, 0);
+	border-radius: 50%;
+	animation: expandCircle 1.5s ease-out forwards;
+	z-index: 9999;
+  }
+  
+  @keyframes expandCircle {
+	from {
+	  width: 0;
+	  height: 0;
+	}
+	to {
+	  width: 400vw;
+	  height: 400vw;
+	  opacity: 0;
+	  display: none;
+	}
+  }
+  
