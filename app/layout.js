@@ -4,7 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'gh.gists Unwrapped',
+  title: 'Github Gists Unwrapped',
   description: 'Gists Wrapper for developers',
 }
 
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <title>gh.gists Unwrapped</title> 
+        <title>Github Gists Unwrapped</title> 
       </head>
       <body className={inter.className}>{children}</body>
     </html>
