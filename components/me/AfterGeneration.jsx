@@ -2,7 +2,7 @@ import React from 'react'
 
  const AfterGeneration = () => {
   return (
-    <div>AfterGeneration</div>
+    <div className='flex justify-center items-center'>AfterGeneration</div>
   )
 }
 export default AfterGeneration

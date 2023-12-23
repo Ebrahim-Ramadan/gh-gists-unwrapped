@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { GetGists } from "./GetGists"
 
  const CTA= () => {
@@ -18,6 +19,7 @@ import { GetGists } from "./GetGists"
                 <div
                     className="flex-1 mt-5 mx-auto w-1/2 lg:mt-0 w-auto"
                 >
+                    <Link target='_blank' href='https://gist.github.com/'>
                     <Image 
                         width={500}
                         height={500}
@@ -25,6 +27,8 @@ import { GetGists } from "./GetGists"
                         alt="" 
                         className="w-full rounded-lg" 
                     />
+                    </Link>
+                    
                 </div>
             </div>
         </section>

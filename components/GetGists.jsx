@@ -71,17 +71,17 @@ export  function GetGists() {
 
   return (
     <>
-        <div className="md:flex md:flex-row md:items-center md:gap-4 mb-2">
-        <input placeholder="Your gh username" className="text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text" value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
+        <div className="md:flex flex-col md:flex-row md:items-center md:gap-4 mb-2">
+        <input placeholder="Your gh username" className="autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text" value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
         
       
-        {error && <div>not found</div>}
+        {error && <div className="">not a user</div>}
         {(!data && !error) &&
-          <div className="stage px-4">
+          <div className="stage p-2">
             <div className="dot-flashing"></div>
           </div>}
         {data && 
-        <Link href={`/${userNameToSearch}`} className="flex rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2">
+        <Link href={`/${userNameToSearch}`} className="p-2 w-fit flex rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2">
         wrap
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

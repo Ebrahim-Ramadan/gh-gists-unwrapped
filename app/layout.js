@@ -1,3 +1,4 @@
+import Footer from '@/components/globals/Footer'
 import Header from '@/components/globals/Header'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -29,7 +30,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <Header  />
-        {children}</body>
+        {children}
+      <Footer/>
+      </body>
     </html>
   )
 }
