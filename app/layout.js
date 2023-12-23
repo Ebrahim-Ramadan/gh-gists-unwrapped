@@ -1,3 +1,4 @@
+import Header from '@/components/globals/Header'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         <title>Github Gists Unwrapped</title> 
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header  />
+        {children}</body>
     </html>
   )
 }
