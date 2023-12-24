@@ -8,7 +8,7 @@ export const Rollable = () => {
   const ASSTrigger = () => {
     setASS(true)
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: 600,
       behavior: 'smooth',
     })
 }

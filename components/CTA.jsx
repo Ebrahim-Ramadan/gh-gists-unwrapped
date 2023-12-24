@@ -12,7 +12,7 @@ import { GetGists } from "./GetGists"
                         Get Your Gists Wrapped <span className="text-indigo-600">as cool as it is</span>
                     </h3>
                     <p className="text-gray-500 leading-relaxed mt-3">
-                    Effortlessly showcase code snippets, snippets, and interactive elements from your repositories. Elevate your user experience by seamlessly embedding GitHub Gists into your Next.js application with ease.
+                    Effortlessly showcase 2023 code snippets, snippets, and interactive elements from your repositories. Elevate your user experience by seamlessly embedding GitHub Gists into your Next.js application with ease.
                     </p>
                     <GetGists/>
                 </div>
