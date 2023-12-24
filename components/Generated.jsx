@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import HeatMap from '@uiw/react-heat-map';
-import secureLocalStorage from "react-secure-storage";
 
 const generateDays = (year, contributions) => {
   const daysInMonth = [
