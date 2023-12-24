@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import HeatMap from '@uiw/react-heat-map';
+import secureLocalStorage from "react-secure-storage";
 
 const generateDays = (year, contributions) => {
   const daysInMonth = [
@@ -35,10 +36,10 @@ const generateDays = (year, contributions) => {
 
 const currentYear = new Date().getFullYear();
 
-const Demo = ({ contributions }) => {
-  const [selected, setSelected] = useState('');
-
+const Generated = ({contributions}) => {
   const value = generateDays(currentYear, contributions);
+
+  const [selected, setSelected] = useState('');
 
   return (
     <div style={{ overflowX: 'auto', whiteSpace: 'nowrap' }} className='bg-neutral-50 rounded-lg'>
@@ -81,4 +82,4 @@ const Demo = ({ contributions }) => {
   );
 };
 
-export default Demo;
+export default Generated;
