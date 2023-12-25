@@ -1,15 +1,9 @@
 'use client'
-import Link from "next/link";
 import React, { Suspense } from "react";
 import useSWR from "swr";
-import secureLocalStorage from "react-secure-storage";
-import Button from '@mui/joy/Button';
-import Stack from '@mui/joy/Stack';
 import Modal from '@mui/joy/Modal';
-import ModalClose from '@mui/joy/ModalClose';
 import ModalDialog from '@mui/joy/ModalDialog';
 import DialogTitle from '@mui/joy/DialogTitle';
-import DialogContent from '@mui/joy/DialogContent';
 import Generated from "./Generated";
 import Loading from "@/app/loading";
 
