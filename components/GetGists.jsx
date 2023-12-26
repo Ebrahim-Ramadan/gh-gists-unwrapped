@@ -117,7 +117,7 @@ export function GetGists() {
              <ModalDialog>
                 <DialogTitle>2023 Github Gists Unwrapped</DialogTitle>
                 {ass && (
-                  <div className="flex flex-row gap-2 items-center">
+                  <a href={`https://gist.github.com/${Owner?.login}`} target='_blank' className="flex flex-row gap-2 items-center">
                     <Image
                       priority
                       src={Owner?.avatar_url}
@@ -132,7 +132,7 @@ export function GetGists() {
                     <p className="text-xs text-gray-400">{following} Following</p>
                     </div>
                     </div>
-                  </div>
+                  </a>
                 )}
                 
                <Suspense fallback={<Loading/>}>
