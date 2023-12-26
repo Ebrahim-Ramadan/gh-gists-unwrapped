@@ -118,15 +118,19 @@ export function GetGists() {
                 <DialogTitle>2023 Github Gists Unwrapped</DialogTitle>
                 {ass && (
                   <div className="flex flex-row gap-2 items-center">
-                  <Image src={Owner?.avatar_url}
+                    <Image
+                      priority
+                      src={Owner?.avatar_url}
                     alt='avatar_url'
                     className="rounded-full"
                     width={60} 
                       height={60} />
                     <div className="flex flex-col">
-                    <p>{Owner?.login}</p>
-                    <p className="text-xs text-gray-400">{follower} Followers</p>
+                    <p>@{Owner?.login}</p>
+                      <div className="flex flex-row gap-2">
+                      <p className="text-xs text-gray-400">{follower} Followers</p>
                     <p className="text-xs text-gray-400">{following} Following</p>
+                    </div>
                     </div>
                   </div>
                 )}
