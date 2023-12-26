@@ -69,6 +69,7 @@ const Generated = ({contributions}) => {
             return (
               <rect
                 {...props}
+                key={data.date} 
                 onClick={() => {
                   setSelected(data.date === selected ? '' : data.date);
                 }}

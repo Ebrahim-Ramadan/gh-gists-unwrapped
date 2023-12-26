@@ -6,7 +6,8 @@ import ModalDialog from '@mui/joy/ModalDialog';
 import DialogTitle from '@mui/joy/DialogTitle';
 import Generated from "./Generated";
 import Loading from "@/app/loading";
-
+import Image from "next/image";
+// import axios from 'axios';
 const fetcher = async (url, token) => {
   const response = await fetch(url, {
     headers: {
@@ -31,10 +32,31 @@ export function GetGists() {
     { revalidateOnFocus: true } // Optionally, enable revalidation on focus
   );
   const [gistsData, setgistsData] = React.useState({});
+  const [Owner, setOwner] = React.useState({});
   const [open, setOpen] = React.useState(false);
+  const [ass, setass] = React.useState(false);
+  const [follower, setfollower] = React.useState(0);
+  const [following, setfollowing] = React.useState(0);
   React.useEffect(() => {
-      if (data) {
-        setgistsData(processingGists(data))
+    console.log('data', data);
+      if (data&&data.length>0) {
+        const ass = async () => {
+          setgistsData(processingGists(data))
+        setOwner(data[0]?.owner)
+
+        const followersResponse = await fetch(data[0]?.owner.followers_url);
+          const followersData = await followersResponse.json();
+          console.log('followersData', followersData);
+          setfollower(followersData.length)
+          const followingResponse = await fetch(data[0]?.owner.following_url.replace('{/other_user}', ''));
+          const followingData = await followingResponse.json();
+          console.log('followingData', followingData);
+          setfollowing(followingData.length)
+        }
+        ass()
+    }
+      else {
+        setass(true)
     }
   }, [data]);
 
@@ -93,11 +115,27 @@ export function GetGists() {
           </button>
            <Modal open={open} onClose={() => setOpen(false)}>
              <ModalDialog>
-               <DialogTitle>2023 Github Gists Unwrapped</DialogTitle>
+                <DialogTitle>2023 Github Gists Unwrapped</DialogTitle>
+                {ass && (
+                  <div className="flex flex-row gap-2 items-center">
+                  <Image src={Owner?.avatar_url}
+                    alt='avatar_url'
+                    className="rounded-full"
+                    width={60} 
+                      height={60} />
+                    <div className="flex flex-col">
+                    <p>{Owner?.login}</p>
+                    <p className="text-xs text-gray-400">{follower} Followers</p>
+                    <p className="text-xs text-gray-400">{following} Following</p>
+                    </div>
+                  </div>
+                )}
+                
                <Suspense fallback={<Loading/>}>
-                  <Generated contributions={gistsData } />
+                  <Generated contributions={gistsData}/>
         
-</Suspense>
+                </Suspense>
+                
              </ModalDialog>
            </Modal>
          </React.Fragment>
