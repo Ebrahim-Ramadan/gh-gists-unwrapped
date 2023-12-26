@@ -5,7 +5,9 @@ import React from 'react'
  const Header = () => {
   return (
     <header className="px-4 lg:px-6 h-12 flex items-center bg-neutral-50 justify-between">
-        <Image className="rounded-lg"
+      <Image
+        priority
+        className="rounded-lg"
                   alt='icon'
                   src='/favicon.png'
                   width={35}
