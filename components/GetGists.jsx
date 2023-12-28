@@ -92,7 +92,8 @@ export function GetGists() {
   if (!userNameToSearch) {
     return (
       <div className="flex flex-row items-center gap-4">
-        <input placeholder="Your gh username" className="text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text"  value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
+         @
+        <input placeholder="Your gh username" className=" autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text"  value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
         
       </div>
     );
@@ -100,8 +101,9 @@ export function GetGists() {
 
   return (
     <>
-        <div className="md:flex flex-col md:flex-row md:items-center md:gap-4 mb-2">
-        <input placeholder="Your gh username" className="autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text" value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
+      <div className="md:flex flex-col md:flex-row md:items-center gap-4 mb-2">
+        @
+        <input placeholder="Your gh username" className="ml-4 md:ml-0 autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text" value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
         
       
         {error && <div className="">not a user</div>}
@@ -111,10 +113,10 @@ export function GetGists() {
         {data && 
         
            <React.Fragment>
-            <button className="p-2 w-fit flex rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2"
+            <button className="p-2 md:w-fit w-full flex rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2"
                          onClick={() => setOpen(true)}
                          >
-        wrap
+        wrap Me
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
