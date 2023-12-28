@@ -39,16 +39,15 @@ export function GetGists() {
   const [following, setfollowing] = React.useState(0);
   React.useEffect(() => {
     console.log('data', data);
-      if (data&&data.length>0) {
+      if (data) {
         const ass = async () => {
           setgistsData(processingGists(data))
-        setOwner(data[0]?.owner)
 
-        const followersResponse = await fetch(data[0]?.owner.followers_url);
+        const followersResponse = await fetch(`https://api.github.com/users/${userNameToSearch}/followers`);
           const followersData = await followersResponse.json();
           console.log('followersData', followersData);
           setfollower(followersData.length)
-          const followingResponse = await fetch(data[0]?.owner.following_url.replace('{/other_user}', ''));
+          const followingResponse = await fetch(`https://api.github.com/users/${userNameToSearch}/following`);
           const followingData = await followingResponse.json();
           console.log('followingData', followingData);
           setfollowing(followingData.length)
@@ -57,6 +56,13 @@ export function GetGists() {
     }
       else {
         setass(true)
+    }
+    if (data) {
+      const plainOwner = {
+        login:`${userNameToSearch}`,
+        avatar_url:'/plain.jpg',
+      }
+      setOwner(data[0]?.owner||plainOwner)      
     }
   }, [data]);
 
@@ -120,7 +126,8 @@ export function GetGists() {
                   <a href={`https://gist.github.com/${Owner?.login}`} target='_blank' className="flex flex-row gap-2 items-center">
                     <Image
                       priority
-                      src={Owner?.avatar_url}
+                      src={Owner?.avatar_url || '/plain.jpg'}
+                      
                     alt='avatar_url'
                     className="rounded-full"
                     width={60} 
