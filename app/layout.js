@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
          
-      <meta name="description" content="Jr. software dev" />
+      <meta name="description" content="Gists Wrapper for developers" />
         <meta data-n-head="ssr" data-hid="og:image:type" property="og:image:type" content="image/jpeg"/>
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
