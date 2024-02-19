@@ -93,7 +93,7 @@ export function GetGists() {
     return (
       <div className="flex flex-row items-center gap-4">
          @
-        <input placeholder="Your gh username" className=" autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text"  value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
+        <input placeholder="Your GH username" className=" autofocus focus:outline-none focus:ring focus:border-indigo-800 text-black font-bold p-2 bg-neutral-50 rounded-lg" type="text"  value={userNameToSearch} onChange={(e) => setUserNameToSearch(e.target.value)} />
         
       </div>
     );
