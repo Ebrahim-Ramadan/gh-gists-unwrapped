@@ -113,7 +113,7 @@ export function GetGists() {
         {data && 
         
            <React.Fragment>
-            <button className="p-2 md:w-fit w-full flex rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2"
+            <button className="p-2 md:w-fit w-full flex text-white rounded-lg bg-indigo-800 p-2 hover:bg-indigo-900 md:mt-0 mt-2 md:mb-0 mb-2"
                          onClick={() => setOpen(true)}
                          >
         wrap Me
