@@ -17,7 +17,7 @@ const Ass = () => {
             <ul className="grid grid-cols-2 gap-x-8 gap-y-1 text-center text-2xl sm:text-4xl md:text-5xl font-medium leading-none">
               <li className="text-right uppercase font-semibold underline">jj</li>
               <li className="text-left uppercase font-semibold underline">mm</li>
-              <li className="text-right">Antonio </li>
+              <li className="text-right">Antoio </li>
               <li className="text-left">Tamia </li>
               <li className="text-right">Kent </li>
               <li className="text-left">Stan </li>
